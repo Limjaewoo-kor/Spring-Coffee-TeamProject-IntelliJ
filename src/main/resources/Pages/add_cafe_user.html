@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap-grid.css" />
+    <link rel="stylesheet" href="../css/icons.css" />
+    <link rel="stylesheet" href="../css/animate.min.css" />
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+    <link rel="stylesheet" type="text/css" href="../css/responsive.css" />
+    <link rel="stylesheet" href="../css/customize.css" />
+    <title>Add Hidden Cafe - User</title>
+  </head>
+  <body class="full-height" id="scrollup">
+    <div class="page-loading">
+      <img src="../images/loader.gif" alt="" />
+      <span>Skip Loader</span>
+    </div>
+
+    <div class="theme-layout">
+      <div class="responsiveheader">
+        <div class="rheader">
+          <span><img src="../images/ricon.png" alt="" /></span>
+          <div class="logo">
+            <a href="#" title=""
+              ><img src="/images/hiddenc_logo.png" alt=""
+            /></a>
+          </div>
+        </div>
+        <div class="rnaver">
+          <span class="closeresmenu"><i>x</i>Close</span>
+          <ul>
+            <li>
+              <a href="#" title="">Home</a>
+            </li>
+            <li class="accountbtn">
+              <a href="#" title="">Search</a>
+            </li>
+            <li>
+              <a href="#" title="">User</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- Responsive header -->
+
+      <header class="s4 dark">
+        <div class="container fluid">
+          <div class="logo">
+            <a href="#" title=""
+              ><img src="/images/hiddenc_logo.png" alt=""
+            /></a>
+          </div>
+          <div class="userdropsec">
+            <span
+              ><img src="http://placehold.it/50x50" alt="" /><span class=""
+                >${user_id}</span
+              ></span
+            >
+          </div>
+          <a href="#" title="" class="bellicon"
+            ><i class="fa fa-bell-o"></i><strong>${notification}</strong></a
+          >
+          <nav>
+            <ul>
+              <li>
+                <a href="#" title="">Home</a>
+              </li>
+              <li class="accountbtn"></li>
+              <li class="accountbtn" style="float: left">
+                <a href="#" title="">Search</a>
+              </li>
+              <li>
+                <a href="#" title="">User</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+
+      <section>
+        <div class="block gray">
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-lg-10">
+                <!-- PBox -->
+                <div class="pbox">
+                  <div class="addlistingform">
+                    <div class="add_cafe_title">카페 추가하기</div>
+                    <div class="row">
+                      <div class="col-lg-6">
+                        <div class="fieldformy">
+                          <span>카페 이름 *</span>
+                          <input type="text" />
+                        </div>
+                        <div class="fieldformy">
+                          <span
+                            >카페 메뉴 (본인이 구매한 메뉴라도 적어주세요)</span
+                          >
+                          <input
+                            placeholder="ex) 아메리카노 4000 , 라떼 4500"
+                            type="text"
+                          />
+                        </div>
+                        <div class="fieldformy">
+                          <span>카테고리</span>
+                          <select class="cdropshere">
+                            <option>select option</option>
+                            <option>option1</option>
+                            <option>option2</option>
+                            <option>option3</option>
+                            <option>option4</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-lg-6">
+                        <div class="fieldformy">
+                          <span>카페 주소 *</span>
+                          <input
+                            placeholder="ex) Seoul, Jongno-gu, Gwancheol-dong, 5-8 카페 뎀셀브즈"
+                            type="text"
+                          />
+                        </div>
+                        <div class="fieldformy">
+                          <span>카페 SNS </span>
+                          <input
+                            placeholder="https://www.instagram.com/starbucks"
+                            type="text"
+                          />
+                        </div>
+                      </div>
+                      <div class="col-lg-12">
+                        <a title="" class="uploadfile">
+                          <img src="../images/cloud.png" alt="" />
+                          <span>이미지를 업로드 하려면 클릭해주세요.</span>
+                          <input
+                            type="file"
+                            accept="img/*"
+                            onChange="uploadImgPreview()"
+                            id="js-upload-cafe"
+                          />
+                        </a>
+                        <div class="pbox">
+                          <h3>Gallery</h3>
+                          <div class="slistinggallery">
+                            <div class="sgallery img_preview">
+                              <div id="js-thumnail" style="display: flex"></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <br />
+                    <div class="fieldbtn">
+                      <button type="search" class="js-submit">등록하기</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="popupsec">
+        <div class="popup">
+          <div class="accounttabs search_pop_size">
+            <span class="closepopup"><i>+</i></span>
+            <div id="content">
+              <div class="accountform pop_form" id="one">
+                <div class="pop_title">
+                  <h5 class="search_title">어떤 카페를 찾으세요?</h5>
+                </div>
+                <div class="search_bar">
+                  <input type="text" placeholder="검색어를 입력하세요" />
+                  <div class="fieldbtn">
+                    <button type="search" class="search_button">SEARCH</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="block">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="footersec">
+                <ul>
+                  <li><a href="#">Home</a></li>
+                  <li><a href="#">Partners</a></li>
+                  <li><a href="#">Contact</a></li>
+                  <li><a href="#">Terms</a></li>
+                  <li><a href="#">Customer Center</a></li>
+                </ul>
+                <span
+                  >Seoul Geumcheon-gu, Gasan-dong, Gasan digital 1-ro</span
+                >
+                <span>+82 02-123-4567</span>
+                <span>HiddenC@gmail.com</span>
+                <div class="social">
+                  <a href="#" title=""><i class="fa fa-facebook"></i></a>
+                  <a href="#" title=""><i class="fa fa-twitter"></i></a>
+                  <a href="#" title=""><i class="fa fa-instagram"></i></a>
+                  <a href="#" title=""><i class="fa fa-google"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bottomline">
+        <a href="#scrollup" class="scrollup" title=""
+          ><i class="fa fa-angle-up"></i
+        ></a>
+        <span>© 2020 HiddenC All rights reserved.</span>
+      </div>
+    </footer>
+    <!-- Script -->
+    <script src="../js/jquery.min.js" type="text/javascript"></script>
+    <script src="../js/modernizr.js" type="text/javascript"></script>
+    <script src="../js/script.js" type="text/javascript"></script>
+    <script src="../js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="../js/wow.min.js" type="text/javascript"></script>
+    <script src="../js/slick.min.js" type="text/javascript"></script>
+    <script src="../js/sumoselect.js" type="text/javascript"></script>
+    <script src="../js/isotop.js" type="text/javascript"></script>
+    <script src="../js/jquery.nicescroll.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="../js/map1.js"></script>
+    <script type="text/javascript" src="../js/jq.aminoSlider.js"></script>
+    <script
+      type="text/javascript"
+      src="//dapi.kakao.com/v2/maps/sdk.js?appkey=f6ac04217d0213217c7208829defdafb"
+    ></script>
+    <script src="app.js" type="module"></script>
+  </body>
+</html>

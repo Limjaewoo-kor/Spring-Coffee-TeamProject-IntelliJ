@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap-grid.css" />
+    <link rel="stylesheet" href="../css/icons.css" />
+    <link rel="stylesheet" href="../css/animate.min.css" />
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+    <link rel="stylesheet" type="text/css" href="../css/responsive.css" />
+    <link rel="stylesheet" type="text/css" href="../css/customize.css" />
+    <title>Edit Profile</title>
+  </head>
+  <body class="full-height" id="scrollup">
+      <div class="page-loading">
+        <img src="../images/loader.gif" alt="" />
+        <span>Skip Loader</span>
+    </div>
+    
+    <div class="theme-layout">
+    
+        <div class="responsiveheader">
+            <div class="rheader">
+                <span><img src="../images/ricon.png" alt="" /></span>
+                <div class="logo">
+                    <a href="#" title=""><img src="/images/hiddenc_logo.png" alt="" /></a>
+                </div>
+            </div>
+            <div class="rnaver">
+                <span class="closeresmenu"><i>x</i>Close</span>
+                <ul>
+                    <li>
+                        <a href="#" title="">Home</a>
+                    </li>
+                    <li class="accountbtn">
+                        <a href="#" title="">Search</a>
+                    </li>
+                    <li >
+                        <a href="#" title="">User</a>
+                    </li>
+                </ul>
+            </div>
+        </div><!-- Responsive header -->
+        
+        <header class="sticktop">
+            <div class="logo">
+                <a href="#" title=""><img src="/images/hiddenc_logo.png" alt="" /></a>
+            </div>
+            <div class="userdropsec">
+                <span><img src="http://placehold.it/50x50" alt="" />${user_id} </span>
+            </div>
+            <a href="#" title="" class="bellicon"><i class="fa fa-bell-o"></i><strong>${notification}</strong></a>
+            <nav>
+                <ul>
+                <li>
+                    <a href="#" title="">Home</a>
+                </li>
+                <li class="accountbtn" style="float:left;">
+                    <a href="#" title="">Search</a>
+                </li>
+                <li >
+                    <a href="#" title="">User</a>
+                </li>
+                    </ul>
+                </nav>
+        </header>
+
+        <section>
+        <div class="block remove-bottom double-gap-top">
+            <div class="layer blackish">
+                <div data-velocity="-.1" style="background: url(http://placehold.it/1920x850) repeat scroll 50% 422.28px transparent;" class="no-parallax parallax scrolly-invisible"></div><!-- PARALLAX BACKGROUND IMAGE -->	
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="iamusersec">
+                                <div class="iamuser">
+                                    <div class="userimg"><img src="http://placehold.it/120x120" alt="" /></div>
+                                    <div class="userinfos">
+                                        <h3>${user_id}</h3>
+                                        <span>${status}</span>
+                                    </div>
+                                </div>
+                                <div class="iamuserstats">
+                                    <span><i class="fa fa-coffee" aria-hidden="true"></i>Caffeine ${user_caffeine}</span>
+                                    <span><i class="flaticon-avatar"></i>Subscriber ${user_like}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="menubarsec">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <a href="#" title=""><i class="flaticon-credit-card"></i>Dashboard</a>
+                        <a href="#" title=""><i class="fa fa-map-pin" aria-hidden="true"></i>My Hidden Cafe(${total_cafe})</a>
+                        <a href="#" title=""><i class="fa fa-users" aria-hidden="true"></i>My Subscription(${subscription}) </a>
+                        <a href="#" title=""><i class="fa fa-plus" aria-hidden="true"></i>Add New Hidden Cafe</a>
+                        <a href="#" title=""><i class="flaticon-heart"></i> Bookmark(${favorite})</a>
+                        <a href="#" title=""><i class="fa fa-cog" aria-hidden="true"></i>Settings</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+
+    <section>
+		<div class="block gray">
+			<div class="container">
+				<div class="row justify-content-center">
+					<div class="col-lg-10">
+						<div class="dashboradsec">
+							<h3>Profile</h3>
+							<div class="profileimageaction">
+								<div class="row">
+									<div class="col-lg-5">
+										<div class="changeimg">
+											<h3>Change Profile Image</h3>
+											<div class="uploadimage">
+                                                <div id="js-thumnail" style="display: flex" src=""></div>
+                                                <div id="thumbnailUrl"></div>
+												<a href="#" title="">Cancel</a>
+											</div>
+                                            <div class="jstinput"><a href="#" title="" class="browsephoto">Browse</a> 
+                                                <input
+                                                type="file"
+                                                accept="img/*"
+                                                onChange="uploadProfile()"
+                                                id="js-upload-profile"
+                                              /></div>
+											<p>Max file size is 1MB, Minimum dimension: <br>270x210 And Suitable</p>
+										</div>
+									</div>
+									<div class="col-lg-7">
+										<div class="changeimg">
+											<h3>Change Background</h3>
+											<div class="uploadimage">
+												<div id="js-thumnail-back" style="display: flex" src=""></div>
+												<a href="#" title="">Cancel</a>
+											</div>
+                                            <div class="jstinput"><a href="#" title="" class="browsephoto">Browse</a>
+                                                <input
+                                                type="file"
+                                                accept="img/*"
+                                                onChange="uploadBackground()"
+                                                id="js-upload-back"
+                                              /></div>
+											<p>Max file size is 1MB, Minimum dimension: 1920x400 And Suitable  <br>files are .jpg & .png</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="pbox">
+								<div class="addlistingform">
+									<div class="row">
+										<div class="col-lg-6">
+											<div class="fieldformy">
+												<span>status message</span>
+												<input type="text">
+											</div>
+											
+										</div>
+										<div class="col-lg-6">
+											<div class="fieldformy">
+												<span>Email </span>
+												<input type="text">
+											</div>
+										</div>
+										<div class="col-lg-12">
+											<div class="formaction">
+												<a href="#" title="" class="updatebtn">Update</a>
+												<a href="#" title="" class="cancelbtn">Cancel</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="pbox">
+								<h3>Change Password</h3>
+								<div class="addlistingform">
+									<div class="row">
+											<div class="col-lg-12">
+												<div class="fieldformy">
+													<span>New Password</span>
+													<input type="password">
+												</div>
+												<div class="fieldformy">
+													<span>Confirm New Password</span>
+													<input type="password">
+												</div>
+											</div>
+											<div class="col-lg-12">
+												<div class="formaction">
+													<a href="#" title="" class="updatebtn">Update</a>
+													<a href="#" title="" class="cancelbtn">Cancel</a>
+												</div>
+											</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+    <footer>
+<div class="block">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="footersec">
+                    <ul>
+                        <li><a href="#" >Home</a></li>
+                        <li><a href="#" >Partners</a></li>
+                        <li><a href="#" >Contact</a></li>
+                        <li><a href="#" >Terms</a></li>
+                        <li><a href="#">Customer Center</a></li>
+                    </ul>
+                    <span>Seoul Geumcheon-gu, Gasan-dong, Gasan digital 1-ro</span>
+                    <span>+82 02-123-4567</span>
+                    <span>HiddenC@gmail.com</span>
+                    <div class="social">
+                        <a href="#" title=""><i class="fa fa-facebook"></i></a>
+                        <a href="#" title=""><i class="fa fa-twitter"></i></a>
+                        <a href="#" title=""><i class="fa fa-instagram"></i></a>
+                        <a href="#" title=""><i class="fa fa-google"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="bottomline">
+    <a href="#scrollup" class="scrollup" title=""><i class="fa fa-angle-up"></i></a>
+    <span>© 2020 HiddenC All rights reserved.</span>
+</div>
+    </footer>
+
+    <div class="popupsec">
+      <div class="popup">
+        <div class="accounttabs search_pop_size">
+          <span class="closepopup"><i>+</i></span>
+          <div id="content">
+            <div class="accountform pop_form" id="one">
+              <div class="pop_title">
+                <h5 class="search_title">어떤 카페를 찾으세요?</h5>
+              </div>
+              <div class="search_bar">
+                <input type="text" placeholder="검색어를 입력하세요" />
+                <div class="fieldbtn">
+                  <button type="search" class="search_button">SEARCH</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!-- Script -->
+    <script src="../js/jquery.min.js" type="text/javascript"></script>
+    <script src="../js/modernizr.js" type="text/javascript"></script>
+    <script src="../js/script.js" type="text/javascript"></script>
+    <script src="../js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="../js/wow.min.js" type="text/javascript"></script>
+    <script src="../js/slick.min.js" type="text/javascript"></script>
+    <script src="../js/sumoselect.js" type="text/javascript"></script>
+    <script src="../js/isotop.js" type="text/javascript"></script>
+    <script src="../js/jquery.nicescroll.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="../js/map1.js"></script>
+    <script type="text/javascript" src="../js/jq.aminoSlider.js"></script>
+    <script
+    type="text/javascript"
+    src="//dapi.kakao.com/v2/maps/sdk.js?appkey=f6ac04217d0213217c7208829defdafb"
+  ></script>
+  <script src="app.js" type="module"></script>
+
+
+  <script>
+
+
+</script>
+
+  </body>
+</html>
